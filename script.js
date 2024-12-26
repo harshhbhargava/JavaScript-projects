@@ -1,17 +1,14 @@
-var bulb = document.querySelector('.bulb')
-var btn = document.querySelector('button')
+var a = document.querySelector('body')
+var b = document.querySelector('#cursor')
+var c = document.querySelector('h1')
 
-
-var flag = 0
-btn.addEventListener('click', function () {
-    if (flag == 0) {
-        bulb.style.backgroundColor = 'yellow'
-        flag = 1
-        btn.innerHTML = 'OFF'
-    }
-    else {
-        bulb.style.backgroundColor = 'transparent'
-        btn.innerHTML = 'ON'
-        flag = 0
-    }
+a.addEventListener('mousemove',function(dets){
+    b.style.top = dets.y + 'px'
+    b.style.left = dets.x + 'px'
+})
+c.addEventListener('mouseenter',function(){
+    b.style.scale = 2
+})
+c.addEventListener('mouseleave',function(){
+    b.style.scale = 1
 })
