@@ -1,14 +1,23 @@
-var a = document.querySelector('body')
-var b = document.querySelector('#cursor')
-var c = document.querySelector('h1')
+var btn = document.querySelector('button')
+var h3 = document.querySelector('.fd')
 
-a.addEventListener('mousemove',function(dets){
-    b.style.top = dets.y + 'px'
-    b.style.left = dets.x + 'px'
-})
-c.addEventListener('mouseenter',function(){
-    b.style.scale = 2
-})
-c.addEventListener('mouseleave',function(){
-    b.style.scale = 1
+var flag = 0
+
+btn.addEventListener('click',function(){
+    if(flag == 0){
+        h3.innerHTML = 'friends'
+        h3.style.color = 'green'
+        btn.innerHTML = 'Remove'
+        btn.style.backgroundColor = 'gray'
+        flag = 1
+    }
+    else{
+        h3.innerHTML = 'Stranger'
+        btn.innerHTML = 'Add Friend'
+        btn.style.backgroundColor = 'green'
+        h3.style.color = 'black'
+        flag = 0
+
+    }
+
 })
